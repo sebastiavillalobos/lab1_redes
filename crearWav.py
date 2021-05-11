@@ -33,7 +33,7 @@ numeroDeMuestras = int(tasaDeMuestreo * 5)
 amplitud = 1000
 
 # Nombre del archivo
-salida = 'ejemplo13-05.wav'
+salida = '/sonidos/ejemplo13-05.wav'
 
 # Ecuaciones
 # Se genera un vector con el valor
