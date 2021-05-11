@@ -1,4 +1,4 @@
-# rama del seba
+# rama del seba, editada en ubuntu
 import numpy as np
 import wavio# Parameters
 rate = 16000    # samples per second
