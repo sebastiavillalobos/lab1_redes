@@ -1,4 +1,4 @@
-# rama del seba, editada en ubuntu
+# rama de sebi :)
 import numpy as np
 import wavio# Parameters
 rate = 16000    # samples per second
@@ -12,5 +12,6 @@ x2 = np.sin(2*np.pi * f2 * t)
 x3 = np.sin(2*np.pi * f3 * t)
 x4 = x1+x2+x3
 wavio.write("sonidos/sine.wav", x4, rate, sampwidth=3)
+
 
 
