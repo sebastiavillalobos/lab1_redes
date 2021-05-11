@@ -16,6 +16,7 @@ import scipy.fft
 
 # aqui estoy agregando comentarios :)?
 
+# aqui algo?
 
 # Frencuencias 
 frecuencia = 440
