@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 # Se utiliza para realizar la transformada de fourier
 import scipy.fft 
 
+# aqui algo?
 # Frencuencias 
 frecuencia = 440
 
