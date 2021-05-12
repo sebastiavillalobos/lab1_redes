@@ -1,6 +1,8 @@
 import numpy as np
 import wave
 import struct
+import scipy.fft
+import matplotlib.pyplot as plt
 # Parameters
 
 # Frencuencias 
@@ -21,7 +23,7 @@ numeroDeMuestras = int(tasaDeMuestreo * 5)
 amplitud = 1000
 
 # Nombre del archivo
-salida = 'ejemplo13-05.wav'
+salida = 'sonidos/sonidito.wav'
 
 # Ecuaciones
 # Se genera un vector con el valor
@@ -36,6 +38,8 @@ onda3 = [np.sin(2 * np.pi * frecuencia3 * x/tasaDeMuestreo) for x in range(numer
 
 # Se suman las dos ondas para generar la señal compuesta
 ondaResultante = np.array(onda) + np.array(onda2) + np.array(onda3)
+# for n in ondaResultante:
+#     print(n)
 
 # LINEAS QUE GENERAN EL WAV
 # Se declara el número de muestras que se utilizarán para el wav
@@ -57,3 +61,29 @@ for muestra in ondaResultante:
     
 # Se cierra el archivo de salida
 archivoSalida.close()
+
+
+# LINEAS QUE GENERAN EL GRÁFICO
+
+# Se genera la recta de la primera onda
+#grafico = plt.plot(onda[0:100], label='onda 1')
+# Se genera la recta de la segunda onda 
+#grafico2 = plt.plot(onda2[0:100], label='onda 2')
+
+# Se genera la recta de la segunda onda 
+#grafico3 = plt.plot(onda3[0:100], label='onda 3')
+
+# Se genera el gráfico de la onda resultante 
+grafico4 = plt.plot(ondaResultante[0:100], label='onda resultante')
+
+freq1 = scipy.fft.fft(onda)
+freq = scipy.fft.fft(ondaResultante)
+xf = scipy.fft.fftfreq(numeroDeMuestras, 1/tasaDeMuestreo)
+plt.plot(xf, np.abs(freq))
+
+# Se agrega un título al gráfico 
+plt.title('Señal mostrada')
+# Se muestra la leyenda para identificar las ondas 
+plt.legend()
+# Se muestra el gráfico por pantalla
+plt.show()
